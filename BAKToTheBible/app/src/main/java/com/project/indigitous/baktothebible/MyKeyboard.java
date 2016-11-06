@@ -53,6 +53,7 @@ public class MyKeyboard extends InputMethodService
 
     }
 
+
     @Override
     public void onRelease(int primaryCode) {
 
@@ -75,7 +76,7 @@ public class MyKeyboard extends InputMethodService
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
-            case -100: //-222 is just a random ID number I assigned my key on the softkeyboard.
+            case -1000: //-222 is just a random ID number I assigned my key on the softkeyboard.
                 PopupMenu popup = new PopupMenu(MyKeyboard.this,kv, Gravity.CENTER);
                 popup.getMenuInflater().inflate(R.menu.popup, popup.getMenu());
                 //menu_main being the xml file for the popup menu
@@ -89,6 +90,7 @@ public class MyKeyboard extends InputMethodService
                 ic.commitText(String.valueOf(code), 1);
         }
     }
+
 
     @Override
     public void onText(CharSequence text) {
